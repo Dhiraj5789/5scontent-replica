@@ -1,7 +1,15 @@
+import NameGenerator from "./name-generator";
 import "./App.css";
+import elementsArr from "./elements";
 
 function App() {
-  return <header className="App-header">Breaking Bad</header>;
+  console.log(elementsArr);
+  return (
+    <main className="App-header">
+      <header>Breaking Bad</header>
+      <NameGenerator />
+    </main>
+  );
 }
 
 export default App;
