@@ -1,9 +1,9 @@
 import NameGenerator from "./name-generator";
 import "./App.css";
-import elementsArr from "./elements";
+import IterateDouble from "./elements";
 
 function App() {
-  console.log(elementsArr);
+  console.log(IterateDouble("Heisenberg"));
   return (
     <main className="App-header">
       <header>Breaking Bad</header>

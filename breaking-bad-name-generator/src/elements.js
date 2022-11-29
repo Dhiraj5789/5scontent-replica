@@ -19,4 +19,18 @@ export const singleLetterElement =
 export const doubleLetterElement =
   elementsArr.length > 1 &&
   elementsArr.filter((element) => element.length === 2);
+export function IterateDouble(str) {
+  const arr = str.split();
+  for (let i = 0; i < arr.length - 1; i++) {
+    const elementSearch = doubleLetterElement.find(
+      (element) =>
+        element.toLowerCase() === (arr[i] + arr[i + 1] + "").toLowerCase()
+    );
+    if (!!elementSearch) {
+      console.log(elementSearch);
+      return elementSearch;
+    }
+  }
+}
+
 export default elementsArr;
