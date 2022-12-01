@@ -1,6 +1,5 @@
 import NameGenerator from "./name-generator";
 import "./App.css";
-import IterateDouble, { IterateSingle } from "./elements";
 
 function App() {
   return (

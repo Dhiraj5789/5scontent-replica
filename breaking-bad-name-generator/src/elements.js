@@ -21,6 +21,8 @@ const doubleLetterElement =
   elementsArr.length > 1 &&
   elementsArr.filter((element) => element.length === 2);
 
+export let storeElement = "";
+
 export function IterateDouble(str) {
   const arr = str.split("");
   for (let i = 0; i < arr.length - 1; i++) {
@@ -28,13 +30,13 @@ export function IterateDouble(str) {
       (element) => element.toLowerCase() === (arr[i] + arr[i + 1]).toLowerCase()
     );
     if (elementSearch) {
-      console.log(elementSearch);
       const elementIndex = doubleLetterElement.indexOf(elementSearch);
       if (elementIndex !== -1) doubleLetterElement.splice(elementIndex, 1);
-      console.log(doubleLetterElement);
-      return elementSearch;
+      storeElement = elementSearch;
+      return true;
     }
   }
+  return;
 }
 
 export function IterateSingle(str) {
@@ -44,10 +46,17 @@ export function IterateSingle(str) {
       (element) => element.toLowerCase() === arr[i].toLowerCase()
     );
     if (elementSearch) {
-      console.log(elementSearch);
+      const elementIndex = singleLetterElement.indexOf(elementSearch);
+      if (elementIndex !== -1) singleLetterElement.splice(elementIndex, 1);
+      storeElement = elementSearch;
       return elementSearch;
     }
   }
+}
+
+export function IterateMain(str) {
+  if (IterateDouble(str)) return storeElement;
+  if (IterateSingle(str)) return storeElement;
 }
 
 export default elementsArr;
