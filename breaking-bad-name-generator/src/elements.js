@@ -32,8 +32,8 @@ export function IterateDouble(str) {
     if (elementSearch) {
       const elementIndex = doubleLetterElement.indexOf(elementSearch);
       if (elementIndex !== -1) doubleLetterElement.splice(elementIndex, 1);
-      storeElement = elementSearch;
-      return true;
+      storeElement = [elementSearch, i];
+      return elementSearch;
     }
   }
   return;
@@ -48,15 +48,17 @@ export function IterateSingle(str) {
     if (elementSearch) {
       const elementIndex = singleLetterElement.indexOf(elementSearch);
       if (elementIndex !== -1) singleLetterElement.splice(elementIndex, 1);
-      storeElement = elementSearch;
+      storeElement = [elementSearch, i];
       return elementSearch;
     }
   }
+  return;
 }
 
 export function IterateMain(str) {
   if (IterateDouble(str)) return storeElement;
   if (IterateSingle(str)) return storeElement;
+  return "J";
 }
 
 export default elementsArr;

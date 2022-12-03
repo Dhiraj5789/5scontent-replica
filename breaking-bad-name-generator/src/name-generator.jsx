@@ -6,7 +6,11 @@ export const NameGenerator = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const element = IterateMain(event.target[0].value) || "no element found";
+    const obj = IterateMain(event.target[0].value);
+    const store = obj[0];
+    const ind = obj[1];
+    console.log("ITERATE", store, ind);
+    const element = store === "J" ? "no element found" : store;
     setState(element);
   }
 
