@@ -1,11 +1,16 @@
-import { items, lang, navbarContainer, title } from "./styles";
+import Circle from "./circle.svg";
+import { hoverOffset, items, lang, navbarContainer, title } from "./styles";
 
 export const Navbar = () => {
   return (
     <nav className={navbarContainer}>
       <div className={lang}>
-        <li>EN</li>
-        <li>FR</li>
+        <li style={{display:"flex", flexDirection:"column", margin:"2rem 0"}} className={hoverOffset}>EN
+        <Circle />
+        </li>
+        <li style={{display:"flex", flexDirection:"column"}} className={hoverOffset}>FR
+        <Circle/>
+        </li>
       </div>
       <div className={items}>
         <li>Work</li>
